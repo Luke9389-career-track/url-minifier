@@ -11,6 +11,7 @@ import { sessionVerify } from '../actions/sessionActions';
 import Header from './Header';
 import SignupUser from '../containers/SignupUser';
 import LoginUser from '../containers/LoginUser';
+import UrlCard from '../components/url/UrlCard';
 
 const PrivateRoute = ({ ...rest }) => {
   const sessionId = useSelector(getSessionId);
@@ -28,13 +29,37 @@ const PrivateRoute = ({ ...rest }) => {
     return <Redirect to="/login" />;
   }
 
-  return <Route { ...rest} />;
+  return <Route {...rest} />;
 };
 
 export default function App() {
   return (
     <Router>
       <Header />
+      <UrlCard
+        longUrl={'longlonglonglonglonglonglonglonglonglong'}
+        shortUrl={'shortshortshort'}
+        hits={1003}
+        dateCreated={'December 3rd 2019'}
+      />
+      <UrlCard
+        longUrl={'longlonglonglonglonglonglonglonglonglong'}
+        shortUrl={'shortshortshort'}
+        hits={1003}
+        dateCreated={'December 3rd 2019'}
+      />
+      <UrlCard
+        longUrl={'longlonglonglonglonglonglonglonglonglong'}
+        shortUrl={'shortshortshort'}
+        hits={1003}
+        dateCreated={'December 3rd 2019'}
+      />
+      <UrlCard
+        longUrl={'longlonglonglonglonglonglonglonglonglong'}
+        shortUrl={'shortshortshort'}
+        hits={1003}
+        dateCreated={'December 3rd 2019'}
+      />
       <Switch>
         <Route path="/login" component={LoginUser} />
         <Route path="/signup" component={SignupUser} />
