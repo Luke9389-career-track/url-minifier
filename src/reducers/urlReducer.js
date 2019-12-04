@@ -1,4 +1,4 @@
-import { CREATE_URL } from '../actions/urlActions';
+import { CREATE_URL, LOAD_URL_LIST } from '../actions/urlActions';
 
 const initialState = [{
   longUrl: 'longlonglonglonglonglonglonglonglonglong',
@@ -29,6 +29,8 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case CREATE_URL:
       return [...state, action.payload];
+    case LOAD_URL_LIST:
+      return [...state, ...action.payload];
     default: 
       return state;
   }

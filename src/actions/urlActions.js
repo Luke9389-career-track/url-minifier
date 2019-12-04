@@ -8,3 +8,10 @@ export const createUrl = (shortUrl, longUrl) => dispatch => {
       payload: createdUrl
     }));
 };
+
+export const LOAD_URL_LIST = 'LOAD_URL_LIST';
+export const loadUrlList = list => ({
+  type: LOAD_URL_LIST,
+  payload: list
+});
+

@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import UrlForm from '../components/url/UrlForm';
-import UrlList from '../components/url/UrlList';
-import createUrl from '../actions/urlActions';
-import getUrls from '../selectors/urlSelectors';
+import Urls from '../components/url/Urls';
+import { loadUrlList, createUrl } from '../actions/urlActions';
+import { getUrls } from '../selectors/urlSelectors';
+import { getUrlList } from '../services/url';
+import { getSessionId } from '../selectors/sessionSelectors';
 
 // eslint-disable-next-line react/prop-types
-const HomePage = ({ urlList, handleSubmit }) => {
+const HomePage = ({ urlList, handleSubmit, userId }) => {
+
+  useEffect(() => {
+    getUrlList(userId)
+      .then(list => {
+        list ? loadUrlList(list) : null;
+      });
+
+  });
 
   return (
     <>
       <UrlForm handleSubmit={handleSubmit} />
-      <UrlList urlList={urlList} />
+      {urlList && <Urls urlList={urlList} />}
     </>
   );
 };
 
 const mapStateToProps = state => ({
+  userId: getSessionId(state),
   urlList: getUrls(state)
 });
 

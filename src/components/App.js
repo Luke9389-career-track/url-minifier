@@ -12,7 +12,6 @@ import Header from './Header';
 import SignupUser from '../containers/SignupUser';
 import LoginUser from '../containers/LoginUser';
 import HomePage from '../containers/HomePage';
-import UrlCard from '../components/url/UrlCard';
 
 const PrivateRoute = ({ ...rest }) => {
   const sessionId = useSelector(getSessionId);
@@ -37,7 +36,7 @@ export default function App() {
   return (
     <Router>
       <Header />
-      {/* <PrivateRoute exact path="/" component={HomePage} /> */}
+      <PrivateRoute exact path="/" component={HomePage} />
       <Switch>
         <Route path="/login" component={LoginUser} />
         <Route path="/signup" component={SignupUser} />

@@ -14,7 +14,7 @@ const UrlForm = (handleSubmit) => {
   );
 };
 
-UrlForm.PropTypes = {
+UrlForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 

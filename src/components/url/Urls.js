@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-type';
+import PropTypes from 'prop-types';
 import UrlCard from './UrlCard';
 
 const Urls = (urlList) => {
@@ -14,7 +14,7 @@ const Urls = (urlList) => {
   );
 };
 
-Urls.PropTypes = {
+Urls.propTypes = {
   urlList: PropTypes.arrayOf(PropTypes.shape({
     shortUrl: PropTypes.string.isRequired,
     longUrl: PropTypes.string.isRequired,
