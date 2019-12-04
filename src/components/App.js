@@ -11,6 +11,7 @@ import { sessionVerify } from '../actions/sessionActions';
 import Header from './Header';
 import SignupUser from '../containers/SignupUser';
 import LoginUser from '../containers/LoginUser';
+import HomePage from '../containers/HomePage';
 import UrlCard from '../components/url/UrlCard';
 
 const PrivateRoute = ({ ...rest }) => {
@@ -36,30 +37,7 @@ export default function App() {
   return (
     <Router>
       <Header />
-      <UrlCard
-        longUrl={'longlonglonglonglonglonglonglonglonglong'}
-        shortUrl={'shortshortshort'}
-        hits={1003}
-        dateCreated={'December 3rd 2019'}
-      />
-      <UrlCard
-        longUrl={'longlonglonglonglonglonglonglonglonglong'}
-        shortUrl={'shortshortshort'}
-        hits={1003}
-        dateCreated={'December 3rd 2019'}
-      />
-      <UrlCard
-        longUrl={'longlonglonglonglonglonglonglonglonglong'}
-        shortUrl={'shortshortshort'}
-        hits={1003}
-        dateCreated={'December 3rd 2019'}
-      />
-      <UrlCard
-        longUrl={'longlonglonglonglonglonglonglonglonglong'}
-        shortUrl={'shortshortshort'}
-        hits={1003}
-        dateCreated={'December 3rd 2019'}
-      />
+      {/* <PrivateRoute exact path="/" component={HomePage} /> */}
       <Switch>
         <Route path="/login" component={LoginUser} />
         <Route path="/signup" component={SignupUser} />

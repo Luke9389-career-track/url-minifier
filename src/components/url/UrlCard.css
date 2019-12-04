@@ -38,13 +38,12 @@
     display: flex;
     margin: 0;
     transition: max-height 0.3s;
-    max-height: 8rem;
     background: rgb(244, 231, 221);
-
   }
   
   .open{
     padding: 1rem;
+    max-height: 8rem;
     p {
       padding: .5rem;
     }

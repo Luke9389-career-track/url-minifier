@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UrlForm from '../components/url/UrlForm';
+import UrlList from '../components/url/UrlList';
+import createUrl from '../actions/urlActions';
+import getUrls from '../selectors/urlSelectors';
 
-const HomePage = () => {
+// eslint-disable-next-line react/prop-types
+const HomePage = ({ urlList, handleSubmit }) => {
 
   return (
     <>
@@ -13,12 +17,13 @@ const HomePage = () => {
 };
 
 const mapStateToProps = state => ({
-  //TODO: get list of links the signed in user has created
+  urlList: getUrls(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit({ target }) {
-    dispatch(createUrl(target.value));
+  handleSubmit(event, shortUrl, longUrl) {
+    event.preventDefault();
+    dispatch(createUrl(shortUrl, longUrl));
   }
 });
 
